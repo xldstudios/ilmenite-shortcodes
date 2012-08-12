@@ -55,7 +55,9 @@ abstract class Ilmenite_Shortcodes {
 	 **/
 	function shortcodes() {
 		
+		require_once(IS_SHORTCODES . '/code.php'); // Load code shortcode
 		require_once(IS_SHORTCODES . '/columns.php'); // Load columns shortcode
+		require_once(IS_SHORTCODES . '/divider.php'); // Load divider shortcode
 		
 	}
 	
