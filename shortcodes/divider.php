@@ -9,27 +9,27 @@
  * @package Ilmenite Shortcodes
  **/
 
-function lucent_shortcode_divider() {
+function ilmenite_shortcode_divider() {
 	return '<div class="divider"></div>';
 }
-add_shortcode('divider', 'lucent_shortcode_divider');
+add_shortcode('divider', 'ilmenite_shortcode_divider');
 
-function lucent_shortcode_divider_top() {
-	return '<div class="divider top"><a href="#">'.__('Top','lucent').'</a></div>';
+function ilmenite_shortcode_divider_top() {
+	return '<div class="divider top"><a href="#">'.__('Top','ilshortcode').'</a></div>';
 }
-add_shortcode('divider_top', 'lucent_shortcode_divider_top');
+add_shortcode('divider_top', 'ilmenite_shortcode_divider_top');
 
-function lucent_shortcode_divider_padding() {
+function ilmenite_shortcode_divider_padding() {
 	return '<div class="divider_padding"></div>';
 }
-add_shortcode('divider_padding', 'lucent_shortcode_divider_padding');
+add_shortcode('divider_padding', 'ilmenite_shortcode_divider_padding');
 
-function lucent_shortcode_divider_line() {
+function ilmenite_shortcode_divider_line() {
 	return '<div class="divider_line"></div>';
 }
-add_shortcode('divider_line', 'lucent_shortcode_divider_line');
+add_shortcode('divider_line', 'ilmenite_shortcode_divider_line');
 
-function lucent_shortcode_clearboth() {
+function ilmenite_shortcode_clearboth() {
    return '<div class="clearboth"></div>';
 }
-add_shortcode('clearboth', 'lucent_shortcode_clearboth');
+add_shortcode('clearboth', 'ilmenite_shortcode_clearboth');
