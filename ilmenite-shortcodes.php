@@ -52,6 +52,7 @@ if( is_admin() ) {
 
 $plugin_data = get_plugin_data( __FILE__ ); // Gets plugin data
 $plugin_version = $plugin_data['Version']; // Get plugin version
+define( 'IS_VERSION', $plugin_version );
 
 $is_config_data = array(
 	'plugin_file' => IS_PLUGIN_FILE,

@@ -1,0 +1,16 @@
+TO-DO List
+
+Version 1.0
+- Add the following shortcodes:
+
+	Accordion
+	Blockquote
+	Button
+	Code (pre)
+	Columns
+	Dividers
+	Maps (Google)
+	Pullquote
+	Tabs
+	Toggle
+	Tooltip

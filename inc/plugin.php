@@ -23,9 +23,11 @@ abstract class Ilmenite_Shortcode {
 	 **/
 	public function __construct( IS_Config $config ) {
 		
-		$this->_config = $config; // Loads config
+		// Loads config
+		$this->_config = $config;
 		
-		$this->init(); // Loads init function
+		// Loads init function
+		$this->init();
 		
 	}
 	
@@ -44,6 +46,17 @@ abstract class Ilmenite_Shortcode {
 	
 	protected function add_filter( $filter, $function, $priority = 10, $accepted_args = 1 ) {
 		add_filter( $filter, array($this, $function == '' ? $filter : $function ), $priority, $accepted_args );
+	}
+	
+	/**
+	 * Loads Shortcodes
+	 *
+	 * @since Ilmenite Shortcodes 1.0
+	 **/
+	function shortcodes() {
+		
+		require_once(IS_SHORTCODES . '/columns.php'); // Load columns shortcode
+		
 	}
 	
 }
