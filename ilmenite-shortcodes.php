@@ -13,6 +13,8 @@ License: GPL2
  * Plugin Definitions
  **/
 
+define( 'IS_VERSION', '1.0' );
+
 define( 'IS_PLUGIN_PATH', dirname( __FILE__ ) );
 define( 'IS_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'IS_PLUGIN_FILE', plugin_basename( __FILE__ ) );
@@ -50,13 +52,9 @@ if( is_admin() ) {
  * Configuration Data
  **/
 
-$plugin_data = get_plugin_data( __FILE__ ); // Gets plugin data
-$plugin_version = $plugin_data['Version']; // Get plugin version
-define( 'IS_VERSION', $plugin_version );
-
 $is_config_data = array(
 	'plugin_file' => IS_PLUGIN_FILE,
-	'version' => $plugin_version
+	'version' => IS_VERSION
 );
 
 /**

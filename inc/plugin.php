@@ -12,7 +12,7 @@
  * @package Ilmenite Shortcodes
  **/
 
-abstract class Ilmenite_Shortcode {
+abstract class Ilmenite_Shortcodes {
 	
 	protected $_config;
 	
