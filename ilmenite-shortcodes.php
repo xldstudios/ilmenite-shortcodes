@@ -3,7 +3,7 @@
 Plugin Name: Ilmenite Shortcodes
 Plugin URI: http://www.xldstudios.com/plugins/ilmenite-shortcodes/
 Description: A standard set of shortcodes.
-Version: 1.0
+Version: 1.1
 Author: XLD Studios
 Author URI: http://www.xldstudios.com
 License: GPL2
@@ -64,3 +64,18 @@ $is_config_data = array(
 $ilmenite_shortcode = new $class_name( new IS_Config( $is_config_data ) );
 
 unset( $class_name, $is_config_data ); // Unset when done.
+
+/**
+ * Auto Update
+ **/
+add_action('init', 'is_auto_update');
+
+function is_auto_update() {
+	
+	require_once( IS_PLUGIN_INC . '/auto-update.php' ); // Load auto update class
+	
+	$remote_update_link = 'http://www.xldstudios.com/updates/plugins/ilmenite-shortcodes/update.php';
+	
+	new WP_Auto_Update( IS_VERSION, $remote_update_link, IS_PLUGIN_FILE );
+	
+}

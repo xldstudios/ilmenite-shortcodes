@@ -8,7 +8,7 @@
  * and includes an init() function to setup filters and actions in public and admin
  *
  * @since Ilmenite Shortcodes 1.0
- * @version 1.0
+ * @version 1.1
  * @package Ilmenite Shortcodes
  **/
 
@@ -58,7 +58,8 @@ abstract class Ilmenite_Shortcodes {
 		require_once(IS_SHORTCODES . '/buttons.php'); // Load buttons shortcode
 		require_once(IS_SHORTCODES . '/code.php'); // Load code shortcode
 		require_once(IS_SHORTCODES . '/columns.php'); // Load columns shortcode
-		require_once(IS_SHORTCODES . '/divider.php'); // Load divider shortcode		
+		require_once(IS_SHORTCODES . '/divider.php'); // Load divider shortcode	
+		require_once(IS_SHORTCODES . '/intro-text.php'); // Load intro text shortcode		
 		
 	}
 	

@@ -9,6 +9,8 @@
  * @package Ilmenite Shortcodes 1.0
  **/
 
+add_shortcode('code','ilmenite_code_shortcode');
+
 function ilmenite_code_shortcode( $atts, $content = null ) {
 	
 	// Set up arguments
