@@ -1,9 +1,10 @@
 <?php
 /**
  * Plugin Name: Ilmenite Shortcodes
- * Plugin URI: http://www.xldstudios.com/
+ * Plugin URI: https://github.com/xldstudios/ilmenite-shortcodes
  * Author: XLD Studios
  * Author URI: http://www.xldstudios.com/
+ * Description: A small shortcodes plugin that contains only the shortcodes that we have found most essential to include on our clients websites to reduce bloat.
  * Version: 1.2
  * Text Domain: ilshortcodes
  * License: GPL2
