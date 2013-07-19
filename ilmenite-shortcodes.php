@@ -19,14 +19,6 @@ define( 'ILS_FOLDER', basename( ILS_PATH ) );
 define( 'ILS_URL', plugins_url() . '/' . ILS_FOLDER );
 define( 'ILS_URL_INCLUDES', ILS_URL . '/inc' );
 
-
-/**
- *
- * The plugin base class - the root of all WP goods!
- *
- * @author nofearinc
- *
- */
 class Ilmenite_Shortcodes {
 
 	/**
@@ -48,6 +40,9 @@ class Ilmenite_Shortcodes {
 
 		// Add the textdomain and support translation
 		add_action( 'plugins_loaded', array( $this, 'ils_add_textdomain' ) );
+
+		// Add plugin updater
+		add_action( 'init', array( $this, 'ils_plugin_update' ) );
 	}
 
 	/**
@@ -113,6 +108,41 @@ class Ilmenite_Shortcodes {
 	 */
 	function ils_add_textdomain() {
 		load_plugin_textdomain( 'ilshortcodes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+
+	/**
+	 * Auto Update Support
+	 *
+	 * Adds support for auto-updating from GitHub repository.
+	 *
+	 * @since  1.2
+	 */
+	function ils_plugin_update() {
+
+		// Include updater class
+		require_once( ILS_PATH_INCLUDES . '/updater.php' );
+
+		define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+		if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+
+			$config = array(
+				'slug'               => plugin_basename( __FILE__ ),
+				'proper_folder_name' => 'ilmenite-shortcodes',
+				'api_url'            => 'https://api.github.com/repos/xldstudios/ilmenite-shortcodes',
+				'raw_url'            => 'https://raw.github.com/xldstudios/ilmenite-shortcodes/master',
+				'github_url'         => 'https://github.com/xldstudios/ilmenite-shortcodes',
+				'zip_url'            => 'https://github.com/xldstudios/ilmenite-shortcodes/archive/master.zip',
+				'sslverify'          => true,
+				'requires'           => '3.0',
+				'tested'             => '3.6',
+				'readme'             => 'README.md',
+			);
+
+			new WP_GitHub_Updater( $config );
+
+		}
+
 	}
 
 }
