@@ -12,13 +12,13 @@
 add_shortcode('code','ilmenite_code_shortcode');
 
 function ilmenite_code_shortcode( $atts, $content = null ) {
-	
+
 	// Set up arguments
-	extract( shortcode_atts( array( 
+	extract( shortcode_atts( array(
 		'codetype' => ''
 	), $atts ) );
-	
-	
+
+
 	// Create the shortcode output
 	$output .= '<pre data-codetype="' . $codetype . '">';
 		$output .= do_shortcode($content);
